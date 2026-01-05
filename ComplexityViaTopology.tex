@@ -1165,62 +1165,6 @@ We remark that when $I$ is uncountable and $\Sigma_i=\mathcal{B}(X_i)$ for all $
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Proof below was simplified by the previous
-
-%\begin{thm}
-    %Let $X$ be a Polish space, $\mathcal{P}$ be a countable set and $Y=\mathbb{R}^\mathcal{P}$.
-Let $A\subseteq C_p(X,Y)$ be a pointwise bounded set (i.e.
-for all $x\in X$, there is a sizer $r_{\bullet}^x=\{r_P^x\}_{P\in\mathcal{P}}$ such that for all $f\in A$ and $P\in\mathcal{P}$, $\pi_P\circ f(x)\in[-r_P^x,r_P^x]$).
-The following are equivalent:
-
-    %\begin{itemize}
-        %\item [(i)] For every compact $K\subseteq X$, $A|_K$ is relatively compact in $B_1(K,Y)$.
-        %\item [(ii)] For every compact $K\subseteq X$, $\overline{A|_K}\subseteq B_1(X,Y)$.
-        %\item [(iii)] For every compact $K\subseteq X$, for every $P\in\mathcal{P}$, $\{f_n\}_n\subseteq A$ and reals $\alpha<\beta$, there is $I\subseteq\mathbb{N}$ such that for any $p\in\mathcal{P}'$,
-    %$$
-    %\bigcap_{n\in I}(p\circ f)^{-1}(-\infty,\alpha]\cap\bigcap_{n\notin I}(p\circ f)^{-1}[\beta,\infty)\cap K=\emptyset.
-    %$$
-        %\item [(iv)] For any relatively compact $L$, for any finite $\mathcal{P}'\subseteq\mathcal{P}$, $\{f_n\}_n\subseteq A$ and reals $\alpha<\beta$, there are disjoint finite sets $F,G\subseteq\mathbb{N}$ such that for any $p\in\mathcal{P}'$,$$\bigcap_{n\in F}(p\circ f)^{-1}(-\infty,\alpha]\cap\bigcap_{n\in G}(p\circ f)^{-1}[\beta,\infty)\cap L=\emptyset.$$
-    %\end{itemize}
-%\end{thm}
-
-
-
-%\subsection{Proof of the conjecture}
-
-%$\boxed{1\implies 2}$
-
-%Denote $F:=A|_K$ and suppose that $f\in\overline F\setminus B_1(X,Y)$.
-Lemma 1 implies that $\hat f\notin B_1(\mathcal{P}\times X)$.
-Since $\mathcal{P}\times X$ is a Polish space, we apply Fact~\ref{baire} to find reals $\alpha<\beta$ and countable sets $D_0,D_1\subseteq\mathcal{P}\times X$ with $\overline{D_0}=\overline{D_1}$, $D_0\subseteq\hat f^{-1}(-\infty,\alpha]$ and $D_1\subseteq\hat f^{-1}[\beta,\infty)$.
-
-%For each $p\in\mathcal{P}$ and $i<2$, let $D_i^p:=\{x\in X:(p,x)\in D_i\}$ and consider $D=\bigcup_{p\in\mathcal{P}}(D_0^p\cup D_1^p)$.
-Since $D$ is countable, enumerate it in order type $\omega$, $D=\{x_i:i<\omega\}$.
-
-%This is Stevo's diagonal argument.
-For each $n\geq1$, find $f_n\in F$ such that the distance between $f(x_i)$ and $f_n(x_i)$ is less than $1/n$ for all $i\leq n$.
-Then, for all fixed $i<\omega$, if $n\geq i$, then for every fixed $x\in D$, $\lim_{n\to\infty}f_n(x)=f(x)$.
-
-%$F$ is not just relatively compact, but relatively countably compact.
-Thus, let $g\in B_1(X,Y)$ be an accumulation point of $\{f_n\}_n$.
-It is clear that $f_D=g|_D$, since $g=\lim_{k\to\infty}f_{n_k}$, and thus for all $x\in D$, $g(x)=\lim_{k\to\infty}f_{n_k}(x)=\lim_{n\to\infty}f_n(x)=f(x)$.
-
-%It follows that $D_0\subseteq\hat g^{-1}(-\infty,\alpha]$ and $D_1\subseteq\hat g^{-1}[\beta,\infty)$.
-Let $E:=\overline{D_0}=\overline{D_1}$.
-By Fact~\ref{baire}, $\hat g|_E$ must have a point of continuity $x\in E$.
-Let $\varepsilon:=\frac{\beta-\alpha}2>0$ and find $\delta>0$ such that $d(x,y)<\delta$ implies $|\hat g(x)-\hat g(y)|<\varepsilon$.
-By density arguments, find for each $i$ an $x_i\in D_i$, with $d(x,x_i)<\delta$.
-But then, the triangle inequality and the choice of $\alpha,\beta$ give $\beta-\alpha\leq|\hat g(x_0)-\hat g(x_1)|<\beta-\alpha$, a contradiction.
-
-%$\boxed{2\implies 3}$
-
-%To prove the remaining implication we need:
-
-%\begin{lem}
-    %$\overline{\hat A|_K}\setminus B_1(\mathcal{P}\times X)\neq\emptyset$ implies that $\overline{A|_K}\setminus B_1(X,Y)\neq\emptyset$.
-%\end{lem}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\begin{thebibliography}{9}
 
