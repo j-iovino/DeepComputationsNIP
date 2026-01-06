@@ -996,15 +996,20 @@ Theorem~\ref{BFT-2F} immediately yields the following.
     Let $(L,\mathcal{P},\Gamma)$ be a CCS satisfying the Extendability Axiom.
 Let $R$ be an exhaustive collection of sizers.
 Let $\Delta\subseteq\Gamma$ be $R$-confined.
-If $\pi_P\circ\Delta|_{L[r_\bullet]}$ satisfies the NIP for all $P\in\mathcal{P}$ and all $r_{\bullet}\in R$, then every deep computation is universally Monte Carlo computable.
+If $\pi_P\circ\Delta|_{L[r_\bullet]}$ satisfies the NIP for all $P\in\mathcal{P}$ and all $r_{\bullet}\in R$, then every deep computation in $\Delta$ is universally Monte Carlo computable.
 \end{thm}
 
 \begin{proof}
-    By the Extendability Axiom, Theorem \ref{BFT-2F} and Lemma \ref{NIP and closure} we have $\overline{\pi_P\circ\tilde\Delta|_{\mathcal{L}[r_\bullet]}}\subseteq M_r(\mathcal{L}[r_\bullet])$ for all $r_\bullet\in R$ and $P\in\mathcal{P}$.
-Let $f\in\overline{\Delta}$ be a deep computation.
-Write $f=\mathcal{U}\lim_i\gamma_i$ as an ultralimit of computations in $\Delta$.
-Define $\tilde f:=\mathcal{U}\lim_i\tilde\gamma_i$.
-Then, for all $r_\bullet\in R$ and $P\in\mathcal{P}$ $\pi_P \circ \tilde\gamma_i|_{\mathcal{L}[r_\bullet]}\in M_r(\mathcal{L}[r_\bullet])$ for all $i$, so $\pi_P \circ f|_{\mathcal{L}[r_\bullet]}\in \overline{\pi_P\circ\tilde\Delta|_{\mathcal{L}[r_\bullet]}}\subseteq M_r(\mathcal{L}[r_\bullet])$.
+    Fix $P\in\mathcal{P}$ and $r_\bullet\in R$. 
+    By the Extendability Axiom, $\pi_P\circ\tilde\Delta|_{\mathcal{L}[r_\bullet]}$ is a set of pointwise bounded continuous functions on the compact set $\mathcal{L}[r_\bullet]$.
+    Since $\pi_P\circ\tilde\Delta|_{L[r_\bullet]}=\pi_P\circ\Delta|_{L[r_\bullet]}$ has the NIP then so does $\pi_P\circ\tilde\Delta|_{\mathcal{L}[r_\bullet]}$ by lemma \ref{NIP and closure}.
+    By Theorem \ref{BFT-2F}, we have $\overline{\pi_P\circ\tilde\Delta|_{\mathcal{L}[r_\bullet]}}\subseteq M_r(\mathcal{L}[r_\bullet])$ for all $r_\bullet\in R$ and $P\in\mathcal{P}$.
+    Let $f\in\overline{\Delta}$ be a deep computation.
+    Write $f=\mathcal{U}\lim_i\gamma_i$ as an ultralimit of computations in $\Delta$.
+    Define $\tilde{f}:=\mathcal{U}\lim_i\tilde{\gamma_i}$.
+    Then, $\tilde{f}:\mathcal{L}_{\text{sh}}\rightarrow \mathcal{L}_{\text{sh}}$ extends $f$.
+    Since $\Delta$ is $R$-confined we have that $f:L[r_\bullet]\rightarrow L[r_\bullet]$ and $\tilde{f}:\mathcal{L}[r_\bullet]\rightarrow \mathcal{L}[r_\bullet]$ for all $r_\bullet\in R$.
+    Lastly, note that for all $r_\bullet\in R$ and $P\in\mathcal{P}$ we have that $\pi_P \circ \tilde{f}|_{\mathcal{L}[r_\bullet]}\in \overline{\pi_P\circ\tilde\Delta|_{\mathcal{L}[r_\bullet]}}\subseteq M_r(\mathcal{L}[r_\bullet])$.
 \end{proof}
 
 \begin{question}
