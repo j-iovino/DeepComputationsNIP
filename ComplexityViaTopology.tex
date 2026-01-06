@@ -884,12 +884,10 @@ Recall that the \emph{raison d'être} of the Baire class-1 functions is to work 
 This motivates the following definition:
 
 
-
 \begin{defn}
 \label{D:universal measurability}
-Given a Hausdorff space $X$ and a measurable space $(Y,\Sigma)$, we say that $f:X\rightarrow Y$ is \emph{universally measurable} (with respect to $\Sigma$) if $f^{-1}(E)$ is $\mu$-measurable\footnote{A set $A\subseteq X$ is $\mu$-measurable if it measurable with respect to the completion of $\Sigma$ by $\mu$, i.e., if there are sets $B,C\in\Sigma$ such that $B\subseteq A\subseteq C$ and $\mu(C\backslash B)=0$.
-Not every Radon measure is complete.
-} for every Radon measure $\mu$ on $X$ and every $E\in\Sigma$.
+Given a Hausdorff space $X$ and a measurable space $(Y,\Sigma)$, we say that $f:X\rightarrow Y$ is \emph{universally measurable} (with respect to $\Sigma$) if $f^{-1}(E)$ is $\mu$-measurable for every Radon measure\footnote{Our definition of Radon measure can be found in 411H in \cite{fremlin2003vol4}.
+} $\mu$ on $X$ and every $E\in\Sigma$.
 When $Y=\mathbb{R}$ we will always take $\Sigma=\mathcal{B}(\mathbb{R})$, the Borel $\sigma$-algebra of $\mathbb{R}$.
 \end{defn}
 
@@ -990,9 +988,8 @@ We say that a transition $f:L\rightarrow L$ is \emph{universally Monte Carlo com
 
 \subsection{Bourgain-Fremlin-Talagrand, NIP, and universal Monte Carlo computability of  deep computations}
 
-
-
-Theorem~\ref{BFT-2F} immediately yields the following.
+The result in this subsection is a consequence of Theorem~\ref{BFT-2F}. 
+It says that PAC-learning (or NIP) implies Monte Carlo computability with respect to any measure.
 
 \begin{thm}
     Let $(L,\mathcal{P},\Gamma)$ be a CCS satisfying the Extendability Axiom.
