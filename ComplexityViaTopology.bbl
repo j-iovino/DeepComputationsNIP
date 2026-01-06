@@ -90,6 +90,12 @@ A.~Grothendieck.
   g\'{e}n\'{e}raux.
 \newblock {\em Amer. J. Math.}, 74:168--186, 1952.
 
+\bibitem[HL66]{halpern1966partition}
+J.~D. Halpern and H.~Läuchli.
+\newblock A partition theorem.
+\newblock {\em Transactions of the American Mathematical Society},
+  124:360--367, 1966.
+
 \bibitem[HT23]{hamel2023cp}
 Clovis Hamel and Franklin~D. Tall.
 \newblock {$C_p$}-theory for model theorists.
@@ -118,6 +124,22 @@ Karim Khanaki.
 \newblock Stability, nip, and nsop; model theoretic properties of formulas via
   topological properties of function spaces.
 \newblock {\em Mathematical Logic Quarterly}, 66(2):136--149, 2020.
+
+\bibitem[LSV93]{louveau_shelah_velickovic_1993}
+Alain Louveau, Saharon Shelah, and Boban Veličkovi{\'{c}}.
+\newblock Borel partitions of infinite subtrees of a perfect tree.
+\newblock {\em Annals of Pure and Applied Logic}, 63(3):271--281, 1993.
+
+\bibitem[Mil81]{milliken1981partition}
+Keith Milliken.
+\newblock A partition theorem for the infinite subtrees of a tree.
+\newblock {\em Transactions of the American Mathematical Society},
+  263:137--148, 1981.
+
+\bibitem[Mil89]{miller1989infinite}
+Arnold~W. Miller.
+\newblock Infinite combinatorics and definability.
+\newblock {\em Annals of Pure and Applied Logic}, 41(2):179--203, 1989.
 
 \bibitem[Pap02]{Pap:2002}
 E.~Pap, editor.

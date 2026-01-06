@@ -1090,9 +1090,12 @@ First, we mention the following useful characterization of measurable functions 
 Just like the NIP, Talagrand $\mu$-stability is directly related to relative compactness in the space $\mathscr{M}^0(X,\mu)$.
 This is the content of the preceeding lemma.
 
+\begin{defn}
 We say that $A$ is \emph{universally Talagrand stable} if $A$ is Talagrand $\mu$-stable for every Radon probability measure $\mu$ on $X$.
-We will see that universal Talagrand stability corresponds to a complexity class smaller than or equal to the NIP.
-In other words, that every universally Talagrand stable set has the NIP.
+\end{defn}
+
+We first observe  that universal Talagrand stability corresponds to a complexity class smaller than or equal to the NIP;
+in other words, that every universally Talagrand stable set satisfies the NIP:
 
 \begin{prop}\label{prop:Talagrand implies NIP}
     Let $X$ be a compact Hausdorff space and $A\subseteq C(X)$ be pointwise bounded.
@@ -1116,8 +1119,8 @@ If $\pi_P\circ\Delta|_{L[r_\bullet]}$ is universally Talagrand stable for all $P
     This is a consequence of proposition \ref{prop:Talagrand implies NIP} and Theorem 4.8.
 \end{proof}
 
-In the measure-theoretic side, we have identified two levels of PAC-learnability: Talagrand stability with respect to any measure and the NIP, which can also be described in measure-theoretic terms. 
-The natural question is whether these two classes are the same. 
+In the measure-theoretic side, we have identified two notions of PAC-learnability: Talagrand stability with respect to any measure and the NIP, which can also be described in measure-theoretic terms. 
+A natural question is whether these two classes are equivalent. 
 Even in the simple case of countably many computations, this question is sensitive to the set-theoretic axioms. 
 On one hand, it is consistent (with respect to the ZFC axioms) that these two classes are the same:
 
