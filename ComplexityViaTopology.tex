@@ -1030,84 +1030,96 @@ We say that $A$ is \emph{Talagrand $\mu$-stable} if and only if for every $\mu$-
 \[
 (\mu^{2k})^*(D_k(A,E,a,b))<(\mu(E))^{2k},
 \]
-where $\mu^*$ denotes the outer measure (we work with outer since the sets $D_k(A,E,a,b)$ need not be $\mu$-measurable).
+where $\mu*$ denotes the outer measure (we work with outer since the sets $D_k(A,E,a,b)$ need not be $\mu$-measurable).
 This is certainly the case when $A$ is a countable set of continuous (or $\mu$-measurable) functions.
 
-The following lemma establishes that Talagrand stability is a way to ensure that deep computations are definable by measurable functions.
+We shall now establish that Talagrand $\mu$-stability is a way to ensure that accumulation points (deep computations) are $\mu$-measurable.
+First, we mention the following useful characterization of measurable functions (compare with Fact \ref{baire}):
 
+\begin{fact}[Lemma 413G in \cite{fremlin2003vol4}]\label{fact: measurable functions characterization}
+    Suppose that $(X,\Sigma,\mu)$ is a measure space and $\mathcal{K}\subseteq\Sigma$ is a collection of measurable sets satisfying the following conditions:
+    \begin{enumerate}
+        \item $(X,\Sigma,\mu)$ is complete, i.e., for all $E\in\Sigma$ with $\mu(E)=0$ and $F\subseteq E$ we have $F\in\Sigma$.
+        \item $(X,\Sigma,\mu)$ is semi-finite, i.e., for all $E\in\Sigma$ with $\mu(E)=\infty$ there exists $F\subseteq E$ such that $F\in\Sigma$ and $0<\mu(F)<\infty$.
+        \item $(X,\Sigma,\mu)$ is saturated, i.e., $E\in\Sigma$ if and only if $E\cap F\in\Sigma$ for all $F\in\Sigma$ with $\mu(F)<\infty$.
+        \item $(X,\Sigma,\mu)$ is inner regular with respect to $\mathcal{K}$, i.e., for all $E\in\Sigma$
+        $$\mu(E)=\sup\{\mu(K):K\in\mathcal{K} \text{ and } K\subseteq E\}$$
+    \end{enumerate}
+    (In particular, if $X$ is Hausdorff, $\mu$ is a Radon measure on $X$ and $\mathcal{K}$ is the collection of compact subsets of $X$, all these conditions hold).
+    Then, $f:X\rightarrow\mathbb{R}$ is measurable if and only if for every $K\in\mathcal{K}$ with $0<\mu(K)<\infty$ and $a<b$, either $\mu^*(P)<\mu(K)$ or $\mu^*(Q)<\mu(K)$ where $P=\{x\in K:f(x)\leq a\}$ and $Q=\{x\in K:f(x)\geq b\}$.
+\end{fact}
 
 \begin{lem}\label{talagrand stable is relatively compact}
     If $A$ is Talagrand $\mu$-stable, then $\overline{A}$ is also Talagrand $\mu$-stable and $\overline{A}\subseteq\mathscr{M}^0(X,\mu)$.
 \end{lem}
 
 \begin{proof}
-    First, observe that a subset of a $\mu$-stable set is $\mu$-stable.
-To show that $\overline{A}$ is $\mu$-stable, observe that $D_k(\overline{A},E,a,b)\subseteq D_k(A,E,a',b')$ where $a<a'<b'<b$ and $E$ is a $\mu$-measurable set with positive measure.
-It suffices to show that $\overline{A}\subseteq \mathscr{M}^0(X,\mu)$.
-Suppose that there exists $f\in\overline{A}$ such that $f\notin \mathscr{M}^0(X,\mu)$.
-By a characterization of measurable functions (see 413G in \cite{fremlin2003vol4}), there exists a $\mu$-measurable set $E$ of positive measure and $a<b$ such that $\mu^*(P)=\mu^*(Q)=\mu(E)$ where $P=\{x\in E: f(x)\leq a\}$ and $Q=\{x\in E: f(x)\geq b\}$.
-Then, for any $k\geq 1$: $(P\times Q)^k\subseteq D_k(\{f\},E,a,b)$ so $(\mu^{2k})^*(D_k(\{f\},E,a,b))=(\mu^*(P)\mu^*(Q))^k=(\mu(E))^{2k}$.
-Thus, $\{f\}$ is not $\mu$-stable, but we argued before that a subset of a $\mu$-stable set must be $\mu$-stable.
+    First, we claim that a subset of a $\mu$-stable set is $\mu$-stable.
+    To see this, suppose that $A\subseteq B$ and $B$ is $\mu$-stable.
+    Fix any $\mu$-measurable $E\subseteq X$ of positive measure and $a<b$.
+    Let $k\geq 1$ such that
+    \[
+    (\mu^{2k})^*(D_k(B,E,a,b))<(\mu(E))^{2k}
+    \]
+    Since $A\subseteq B$, then $D_k(A,E,a,b)\subseteq D_k(B,E,a,b)$ so
+    \[
+    (\mu^{2k})^*(D_k(A,E,a,b))\leq (\mu^{2k})^*(D_k(B,E,a,b))<(\mu(E))^{2k}
+    \]
+    We now show that $\overline{A}$ is $\mu$-stable.
+    Fix $E\subseteq X$ measurable with positive measure and $a<b$.
+    Let $a'<b'$ be such that $a<a'<b'<b$.
+    Since $A$ is $\mu$-stable, let $k\geq 1$ be such that
+    \[
+    (\mu^{2k})^*(D_k(A,E,a',b'))<(\mu(E))^{2k}
+    \]
+    If $x\in D_k(\overline{A},E,a,b)$, then there is $f\in\overline{A}$ such that $f(x_{2i})\leq a<a'$ and $f(x_{2i+1})\geq b>b'$ for all $i<k$.
+    By definition of pointwise convergence topology, there exists $g\in A$ such that $g(x_{2i})<a'$ and $g(x_{2i+1})>b'$ for all $i<k$.
+    Hence, $x\in D_k(A,E,a',b')$.
+    We have shown that $D_k(\overline{A},E,a,b)\subseteq D_k(A,E,a',b')$ so
+    \[
+    (\mu^{2k})^*(D_k(\overline{A},E,a,b))\leq (\mu^{2k})^*(D_k(A,E,a',b'))<(\mu(E))^{2k}
+    \]
+    It suffices to show that $\overline{A}\subseteq \mathscr{M}^0(X,\mu)$.
+    Suppose that there exists $f\in\overline{A}$ such that $f\notin \mathscr{M}^0(X,\mu)$.
+    By fact \ref{fact: measurable functions characterization}, there exists a $\mu$-measurable set $E$ of positive measure and $a<b$ such that $\mu^*(P)=\mu^*(Q)=\mu(E)$ where $P=\{x\in E: f(x)\leq a\}$ and $Q=\{x\in E: f(x)\geq b\}$.
+    Then, for any $k\geq 1$: $(P\times Q)^k\subseteq D_k(\{f\},E,a,b)$ so $(\mu^{2k})^*(D_k(\{f\},E,a,b))=(\mu^*(P)\mu^*(Q))^k=(\mu(E))^{2k}$.
+    Thus, $\{f\}$ is not $\mu$-stable, but we argued before that a subset of a $\mu$-stable set must be $\mu$-stable.
+    Contradiction.
 \end{proof}
+
+Just like the NIP, Talagrand $\mu$-stability is directly related to relative compactness in the space $\mathscr{M}^0(X,\mu)$.
+This is the content of the preceeding lemma.
 
 We say that $A$ is \emph{universally Talagrand stable} if $A$ is Talagrand $\mu$-stable for every Radon probability measure $\mu$ on $X$.
-An argument similar to the proof of~\ref{BFT-2F}, yields the following:
+We will see that universal Talagrand stability corresponds to a complexity class smaller than or equal to the NIP.
+In other words, that every universally Talagrand stable set has the NIP.
 
-\begin{thm}
-    Let $(L,\mathcal{P},\Gamma)$ be a CCS satisfying the Extendability Axiom.
-If $\pi_P\circ\Delta|_{L[r_\bullet]}$ is universally Talagrand stable for all $P\in\mathcal{P}$ and all sizers $r_{\bullet}$, then every deep computation is universally Monte Carlo computable.
-\end{thm}
-
-It is then natural to ask: what is the relationship between Talagrand stability and the NIP? The following dichotomy will be useful.
-
-\begin{lem}[Fremlin's Dichotomy, 463K in \cite{fremlin2003vol4}]
-\label{T:Fremlins dichotomy}
-    If $(X,\Sigma,\mu)$ is a perfect $\sigma$-finite measure space (in particular, for $X$ compact and $\mu$ a Radon probability measure on $X$) and $\{f_n:n\in\mathbb{N}\}$ be a sequence of real-valued measurable functions on $X$, then one (and only one) of the following conditions holds:
-    \begin{enumerate}[(i)] 
-        \item
-        $\{f_n:n\in\mathbb{N}\}$ has a subsequence that converges $\mu$-almost everywhere,
-        \item
-        $\{f_n:n\in\mathbb{N}\}$ has a subsequence with no $\mu$-measurable accumulation point in $\mathbb{R}^X$.
-    \end{enumerate}
-\end{lem}
-
-The preceding lemma can be considered as a measure-theoretic version of Rosenthal's dichotomy.
-Combining this dichotomy with Theorem \ref{BFT-2F}, we get the following result:
-
-\begin{thm}
-    Let $X$ be a Hausdorff space and $A\subseteq C(X)$ be pointwise bounded.
-The following are equivalent:
-    \begin{enumerate}[(i)] 
-        \item
-        $\overline{A}\subseteq M_r(X)$.
-        \item [(ii)] For every compact $K\subseteq X$, $A|_K$ satisfies the NIP.
-        \item [(iii)] For every Radon measure $\mu$ on $X$, $A$ is relatively countably compact in $\mathscr{M}^0(X,\mu)$, i.e., every countable subset of $A$ has an accumulation point in $\mathscr{M}^0(X,\mu)$.
-        \item [(iv)] For every Radon measure $\mu$ on $X$ and every sequence $\{f_n:n\in\mathbb{N}\}\subseteq A$, there is a subsequence that converges $\mu$-almost everywhere.
-    \end{enumerate}
-\end{thm}
-
-\begin{proof}
-    The equivalence (i)$\Leftrightarrow$(ii)$\Leftrightarrow$(iii)  is Theorem \ref{BFT-2F}, and the equivalence (iii)$\Leftrightarrow$(iv) is Fremlin's Dichotomy (Theorem~\ref{T:Fremlins dichotomy}).
-\end{proof}
-
-Finally, it is natural to ask what the connection is between Talagrand stability and NIP.
-
-\begin{prop}
+\begin{prop}\label{prop:Talagrand implies NIP}
     Let $X$ be a compact Hausdorff space and $A\subseteq C(X)$ be pointwise bounded.
 If $A$ is universally Talagrand stable, then $A$ satisfies the NIP.
 \end{prop}
 
 \begin{proof}
     By Theorem \ref{BFT-2F}, it suffices to show that $A$ is relatively countably compact in $\mathscr{M}^0(X,\mu)$ for all Radon probability measure $\mu$ on $X$.
-Since $A$ is Talagrand $\mu$-stable for any such $\mu$, we have $\overline{A}\subseteq\mathscr{M}^0(X,\mu)$.
+Since $A$ is Talagrand $\mu$-stable for any such $\mu$, we have $\overline{A}\subseteq\mathscr{M}^0(X,\mu)$ by lemma \ref{talagrand stable is relatively compact}.
 In particular, $A$ is relatively countably compact in $\mathscr{M}^0(X,\mu)$.
 \end{proof}
 
-\begin{question}
-    Is the converse true?
-\end{question}
+In the computational context we get the following:
 
-The following two results suggest that the precise connection between Talagrand stability and NIP may be sensitive to set-theoretic axioms (even assuming countability of $A$).
+\begin{cor}\label{T:Talagrand stability and Monte Carlo}
+    Let $(L,\mathcal{P},\Gamma)$ be a CCS satisfying the Extendability Axiom.
+If $\pi_P\circ\Delta|_{L[r_\bullet]}$ is universally Talagrand stable for all $P\in\mathcal{P}$ and all sizers $r_{\bullet}$, then every deep computation is universally Monte Carlo computable.
+\end{cor}
+
+\begin{proof}
+    This is a consequence of proposition \ref{prop:Talagrand implies NIP} and Theorem 4.8.
+\end{proof}
+
+In the measure-theoretic side, we have identified two levels of PAC-learnability: Talagrand stability with respect to any measure and the NIP, which can also be described in measure-theoretic terms. 
+The natural question is whether these two classes are the same. 
+Even in the simple case of countably many computations, this question is sensitive to the set-theoretic axioms. 
+On one hand, it is consistent (with respect to the ZFC axioms) that these two classes are the same:
 
 \begin{thm}[Talagrand, Theorem 9-3-1(a) in \cite{talagrand1984pettis}]
     Let $X$ be a compact Hausdorff space and $A\subseteq M_r(X)$ be countable and pointwise bounded.
@@ -1115,10 +1127,17 @@ Assume that $[0,1]$ is not the union of $<\mathfrak{c}$ closed measure zero sets
 If $A$ satisfies the NIP, then $A$ is universally Talagrand stable.
 \end{thm}
 
+The assumption that $[0,1]$ is not the union of $<\mathfrak{c}$ closed measure zero sets is a consequence of, for example, the Continuum Hypothesis.
+On the other hand, by fixing a particular well-known measure: the Lebesgue measure, we see that the other case is also consistent:
+
 \begin{thm}[Fremlin, Shelah, \cite{fremlin1993pointwise}]
     It is consistent with the usual axioms of set theory that there exists a countable pointwise bounded set of Lebesgue measurable functions with the NIP which is not Talagrand stable with respect to Lebesgue measure.
 \end{thm}
 
+Notice that in the framework presented in this paper, we are interested in continuous computations and their limits. 
+The previous two results apply to sets of measurable functions, a higher level of computability than continuity.
+It is possible that the continuity assumption, i.e., the Extendibility Axiom, settles the problem. 
+This is a problem that remains open for future work.
 
 \begin{comment}
 
