@@ -880,16 +880,15 @@ We replace deterministic computability by measure-theoretic (`Monte Carlo') comp
 
 \subsection{A measure-theoretic version of NIP}
 
-Recall that the \emph{raison d'être} of the class of Baire-1 functions is to have a class that  contains the continuous functions but is closed under pointwise limits, and that for perfectly normal $X$, a function  $f$ is in $B_1(X,Y)$ if and only if $f^{-1}[U]$ is an $F_\sigma$ subset of $X$ for every open $U\subseteq Y$ (see Fact~\ref{baire}).
+Recall that the \emph{raison d'être} of the Baire class-1 functions is to work with a small class that contains the continuous functions and their pointwise limits, and that for perfectly normal $X$, a function  $f$ is in $B_1(X,Y)$ if and only if $f^{-1}[U]$ is an $F_\sigma$ subset of $X$ for every open $U\subseteq Y$ (see Fact~\ref{baire}).
 This motivates the following definition:
 
 
 
 \begin{defn}
 \label{D:universal measurability}
-Given a Hausdorff space $X$ and a measurable space $(Y,\Sigma)$, we say that $f:X\rightarrow Y$ is \emph{universally measurable} (with respect to $\Sigma$) if $f^{-1}(E)$ is Borel for every $E\in\Sigma$, i.e., $f^{-1}(E)$ is $\mu$-measurable for every Radon measure $\mu$ on $X$.
+Given a Hausdorff space $X$ and a measurable space $(Y,\Sigma)$, we say that $f:X\rightarrow Y$ is \emph{universally measurable} (with respect to $\Sigma$) if $f^{-1}(E)$ is $\mu$-measurable for every Radon measure $\mu$ on $X$ and every $E\in\Sigma$.
 When $Y=\mathbb{R}$ we will always take $\Sigma=\mathcal{B}(\mathbb{R})$, the Borel $\sigma$-algebra of $\mathbb{R}$.
-
 \end{defn}
 
 \begin{rem} 
